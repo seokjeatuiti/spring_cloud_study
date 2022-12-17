@@ -1,0 +1,27 @@
+spring:
+  config:
+    import: optional:configserver:http://localhost:8888
+  profiles:
+    active: dev
+
+---
+spring:
+  profiles: dev
+  application:
+    name: ms1
+
+  cloud:
+    config:
+      label: main
+      enabled: true
+      uri: http://localhost:8888
+      fail-fast: false
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+      
+server:
+  port: 8089

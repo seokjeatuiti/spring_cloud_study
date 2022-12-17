@@ -1,0 +1,12 @@
+spring:
+  # Config Server 연동 설정
+  config:
+    import: optional:configserver:http://localhost:8888
+  cloud:
+    config:
+      # config repository 에서 어느 하위폴더에 접근할 지 지정
+      name: ms1
+      # 설정 파일의 config repository 프로파일 지정
+      profile: dev
+      # config repository 의 어느 브랜치에서 가져올 지 지정
+      label: main
